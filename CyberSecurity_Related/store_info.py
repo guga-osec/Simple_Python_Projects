@@ -7,7 +7,7 @@ try:
 		fire = input('Firewall (Y/N): ')
 		owname = input('Owner name: ')
 		admin_name = input('Admin name: ')
-		print('Acrescentações:')
+		print('Additions:')
 
 		linhas = []
 		while True:
@@ -18,7 +18,7 @@ try:
 
 		more = "\n\t".join(linhas)
 		strings = f"""--------------------------------------
-		\n\tColeta de Informação
+		\n\tInformation Gathering
 		-> Site : {name}
 		-> IP : {ip}
 		-> Name Server : {name_server}
@@ -26,7 +26,7 @@ try:
 		-> Owner name: {owname}
 		-> Admin name: {admin_name}
 
-		Acrescentações (Enter vazio para sair):\n\t{more}"""
+		Additions (Enter empty to leave:\n\t{more}"""
 
 		with open(f"./informathion_gath_{name}.txt", "w" , encoding="utf-8") as f:
 			f.write(strings)
@@ -47,16 +47,16 @@ try:
 
 	print()
 	print( "-" * 5, "FootPrint_Saver", "-" * 5)
-	options = ['Padrão', 'Write', 'Sair']
+	options = ['Standart', 'Write', 'Leave']
 
 	while True:
-		print('Opções:')
+		print('Options:')
 		for x in range(len(options)):
 			print(f'\t{x} - {options[x]}')
 		choose = int(input('>> ').strip())
 		print()
 		if choose != 2:
-			name = input('Nome: ')
+			name = input('Name: ')
 		if choose == 0:
 			padr(name)
 		elif choose == 1: 
@@ -64,7 +64,7 @@ try:
 		elif choose == 2:
 			exit()
 		else:
-			print('Erro X')
+			print('Error X')
 
 except:
 	pass

@@ -31,8 +31,8 @@ try:
 		return text
 
 	def search_ports(ports):
-		c = input(blue_text('\nVer portas fechadas (y/N): ')).lower()
-		print('\n-> Começando o Scan nas portas...')
+		c = input(blue_text('\nSee closed doors(y/N): ')).lower()
+		print('\n-> Starting the scan...')
 		for port in ports:
 			verify_port(domain_or_ip,port=port,seec=c)
 
@@ -50,14 +50,14 @@ try:
 					print("\nResposta:")
 					print(response.decode(errors="replace"))
 				except socket.timeout:
-					print("\nO servidor não enviou uma resposta.")
+					print("\nThe server didn't reply.")
 
 		except Exception as e:
-			print(Fore.RED + f"\nErro: {e}")
+			print(Fore.RED + f"\nError: {e}")
 
 	domain_or_ip = input(blue_text( 'Domain/IP: '))
 	port = int(input(blue_text('PORT: ')))
-	
+
 	client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	client.settimeout(0.5)
 
@@ -68,9 +68,9 @@ try:
 		send_message(domain_or_ip,port)
 
 	elif choice == 2:
-		ddq = input(blue_text('Deseja escolher as portas (y/N): ')).upper()
+		ddq = input(blue_text('Wanna choose the doors (y/N): ')).upper()
 		if ddq == 'Y':
-			portas = input(blue_text('Digite as portas (separe as por "," ): ')).strip()
+			portas = input(blue_text('Enter the doors (split them with "," ): ')).strip()
 			if ',' in portas:
 				portas = portas.split(',')
 				ports.clear()
@@ -80,7 +80,7 @@ try:
 		elif ddq == 'N' or ddq == '':
 			search_ports(ports)
 		else: 
-			print('escolha inválida')
+			print('Invalid Choice')
 except:
 	pass
 print()
