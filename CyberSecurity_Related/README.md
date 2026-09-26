@@ -11,4 +11,5 @@ I like this one and I think is very interesting the idea because every pentester
 needs to place his info that he gathered in a notepad or something similar.
 
 With this tool you just run it and type in the information.
+
 In the end It creates a organized file containing all the information you gathered.
