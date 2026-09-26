@@ -1,7 +1,7 @@
 # CyberSecurity Python Projects 🔐
 
 ## dnsbrute.py 🦾💥
-This tool is, as is name says, an dns brute force, it search for subdomains in the website you choose
+This tool is, as is name says a dns brute force, it search for subdomains in the website you choose
 
 ## portscan.py ⛶👁️
 This tool is like a nmap, but of course worse LOL, in is essence it's scans ports in a website/IP
