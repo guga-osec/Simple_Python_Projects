@@ -7,7 +7,8 @@ class Main:
                 self.file = file
                 self.file_name = file.rsplit('.', 1)[0]
                 self.responses = response
-
+                if isinstance(self.responses[0], list):
+                    self.responses = self.responses[0]
                 if output_name.replace(" ", "")  == '':
                         self.output_name = f'output_{self.file_name}.txt'
                 else:
@@ -46,7 +47,7 @@ parser = argparse.ArgumentParser(description='Rf_DIRB')
 
 parser.add_argument('-f', '--file', help='file to see' , dest='input_file')
 parser.add_argument('-o','--output',help='output file', dest='output_file', default='')
-parser.add_argument('-r','--responses', help='wanted responses',dest='responses', default=['200'])
+parser.add_argument('-r','--responses', help='wanted responses',dest='responses', default=['200'], nargs='+' )
 
 args = parser.parse_args()
 
